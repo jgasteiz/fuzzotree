@@ -1,6 +1,6 @@
 # fuzzotree
 
-Javascript app which prints an ul-tree given a json object with the following format:
+jQuery app which prints an ul-tree given a json object with the following format:
 
         var json_object = [
             {
@@ -56,3 +56,9 @@ Javascript app which prints an ul-tree given a json object with the following fo
                 "a": "https://github.com/jgasteiz/fuzzotree"
             }
         ];
+
+And the result:
+
+![screen](http://i.imgur.com/Dhww5.jpg "Result tree")
+
+Live demo [here](http://javimanzano.me/fuzzotree)
