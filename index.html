@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>fuzzotree</title>
+        <link href="css/fuzzotree.css" rel="stylesheet">
+    </head>
+    <body>
+        <pre>
+            <code>
+            var data = [
+                {
+                    label: 'node1',
+                    children: [
+                        { label: 'child1' },
+                        { label: 'child2' }
+                    ]
+                },
+                {
+                    label: 'node2',
+                    children: [
+                        { label: 'child3' }
+                    ]
+                }
+            ];
+            </code>
+        </pre>
+        <div id="container"></div>
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="js/fuzzotree.js"></script>
+        <script>
+            // Some dumb data
+            var json_object = [
+                {
+                    label: 'this labes are needed',
+                    children: [
+                        {
+                            label: 'children are optional'
+                        },
+                        {
+                            label: 'the object may be as deep as you want!',
+                            children: [
+                                {
+                                    label: 'children are optional'
+                                },
+                                {
+                                    label: 'the object may be as deep as you want!',
+                                    children: [
+                                        {
+                                            label: 'children are optional'
+                                        },
+                                        {
+                                            label: 'the object may be as deep as you want!',
+                                            children: [
+                                                {
+                                                    label: 'children are optional'
+                                                },
+                                                {
+                                                    label: 'the object may be as deep as you want!',
+                                                    children: [
+                                                        {
+                                                            label: 'enough'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: 'thanks for sharing!'
+                }
+            ];
+            $(document).ready(function() {
+                FUZZOTREE.init(json_object);
+            });
+        </script>
+    </body>
+</html>
