@@ -1,48 +1,18 @@
-
 /*
- *  Javascript app which prints an ul-tree given a json object with the
- *  following format:
-        var json_object = [
-            {
-                label: 'this labes are needed',
-                children: [
-                    {
-                        label: 'children are optional'
-                    },
-                    {
-                        label: 'the object may be as deep as you want!',
-                        children: [
-                            {
-                                label: 'children are optional'
-                            },
-                            {
-                                label: 'the object may be as deep as you want!',
-                                children: children: [
-                                    {
-                                        label: 'enough'
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                label: 'thanks for sharing!'
-            }
-        ];
+ *  Main fuzzotree class
  *
  */
 var FUZZOTREE = (function(){
 
     /*
      *  Recursive function that creates an ul with many li elements as
-     *  children it has
+     *  children it has.
      *
      */
     function treefy(tree, className) {
         var ul = $(document.createElement('ul')),
             li,
+            a,
             child,
             ulAux;
         if (className) {
@@ -52,9 +22,21 @@ var FUZZOTREE = (function(){
             child = tree[i];
             if (child.label) {
                 li = $(document.createElement('li'))
+                        .addClass("son")
                         .appendTo(ul);
+                a = $(document.createElement('a'))
+                        .html(child.label)
+                        .appendTo(li);
+                if (child.a) {
+                    $(li).append(
+                        $(document.createElement('a'))
+                            .attr("href", child.a)
+                            .attr("target", "_blank")
+                            .addClass("window"));
+                }
                 if (child.children) {
-                    li.addClass("fuzz-clickable")
+                    a.addClass("fuzz-clickable");
+                    li.addClass("father")
                         .append(treefy(child.children));
                 }
             }
@@ -63,12 +45,12 @@ var FUZZOTREE = (function(){
     }
 
     /*
-     *  When click a clickable li, it toggles its childre (if any)
+     *  When click a clickable anchor, it toggles its "ul" child
      *
      */
     function clickableListeners() {
         $("a.fuzz-clickable").click(function() {
-            $(this).children().toggle();
+            $(this).parent().toggleClass("protective");
         });
     }
 

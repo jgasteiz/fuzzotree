@@ -1,0 +1,42 @@
+a.fuzz-clickable,
+a[href] {
+	color: #0088CC;
+	cursor: pointer;
+	text-decoration: none;
+}
+a.fuzz-clickable:hover,
+a[href]:hover {
+	color: #005580;
+    text-decoration: underline;
+}
+a.window {
+	background: url("window.png") no-repeat scroll right center transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin-left: 6px;
+    width: 16px;
+}
+a.window:hover {
+	background-color: #00DDFF;
+}
+ul.fuzzotree {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+ul li.son {
+	list-style: none
+}
+ul li.son.father {
+	list-style: url('open.png');
+}
+ul li.son.father.protective {
+	list-style: url('close.png');
+}
+ul li.son.father.protective ul {
+	display: none;
+}

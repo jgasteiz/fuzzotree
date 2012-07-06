@@ -6,23 +6,65 @@
         <link href="css/fuzzotree.css" rel="stylesheet">
     </head>
     <body>
+        <section>
+            Javascript app which prints an ul-tree given a json object with the following format:
+        </section>
         <pre>
             <code>
-            var data = [
-                {
-                    label: 'node1',
-                    children: [
-                        { label: 'child1' },
-                        { label: 'child2' }
-                    ]
-                },
-                {
-                    label: 'node2',
-                    children: [
-                        { label: 'child3' }
-                    ]
-                }
-            ];
+        var json_object = [
+            {
+                "label": "These labels are needed",
+                "children": [
+                    {
+                        "label": "Children are optional"
+                    },
+                    {
+                        "label": "The object may be as deep as you want!",
+                        "children": [
+                            {
+                                "label": "Children are optional"
+                            },
+                            {
+                                "label": "The object may be as deep as you want!",
+                                "children": [
+                                    {
+                                        "label": "Children are optional"
+                                    },
+                                    {
+                                        "label": "The object may be as deep as you want!",
+                                        "children": [
+                                            {
+                                                "label": "Children are optional"
+                                            },
+                                            {
+                                                "label": "The object may be as deep as you want!",
+                                                "children": [
+                                                    {
+                                                        "label": "Ok, enough"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "Ah! you can also pass a link",
+                "a": "http://javimanzano.me"
+            },
+            {
+                "label": "It'll open in a new tab",
+                "a": "http://54.247.176.13/"
+            },
+            {
+                "label": "Thanks for sharing!",
+                "a": "https://github.com/jgasteiz/fuzzopress"
+            }
+        ];
             </code>
         </pre>
         <div id="container"></div>
@@ -35,34 +77,34 @@
             // Some dumb data
             var json_object = [
                 {
-                    label: 'this labes are needed',
-                    children: [
+                    "label": "These labels are needed",
+                    "children": [
                         {
-                            label: 'children are optional'
+                            "label": "Children are optional"
                         },
                         {
-                            label: 'the object may be as deep as you want!',
-                            children: [
+                            "label": "The object may be as deep as you want!",
+                            "children": [
                                 {
-                                    label: 'children are optional'
+                                    "label": "Children are optional"
                                 },
                                 {
-                                    label: 'the object may be as deep as you want!',
-                                    children: [
+                                    "label": "The object may be as deep as you want!",
+                                    "children": [
                                         {
-                                            label: 'children are optional'
+                                            "label": "Children are optional"
                                         },
                                         {
-                                            label: 'the object may be as deep as you want!',
-                                            children: [
+                                            "label": "The object may be as deep as you want!",
+                                            "children": [
                                                 {
-                                                    label: 'children are optional'
+                                                    "label": "Children are optional"
                                                 },
                                                 {
-                                                    label: 'the object may be as deep as you want!',
-                                                    children: [
+                                                    "label": "The object may be as deep as you want!",
+                                                    "children": [
                                                         {
-                                                            label: 'enough'
+                                                            "label": "Ok, enough"
                                                         }
                                                     ]
                                                 }
@@ -75,7 +117,16 @@
                     ]
                 },
                 {
-                    label: 'thanks for sharing!'
+                    "label": "Ah! you can also pass a link",
+                    "a": "http://javimanzano.me"
+                },
+                {
+                    "label": "It'll open in a new tab",
+                    "a": "http://54.247.176.13/"
+                },
+                {
+                    "label": "Thanks for sharing!",
+                    "a": "https://github.com/jgasteiz/fuzzopress"
                 }
             ];
             $(document).ready(function() {
